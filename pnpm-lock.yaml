@@ -6,6 +6,7 @@ specifiers:
   '@angular-eslint/eslint-plugin-template': ~12.3.0
   '@angular-eslint/template-parser': ~12.3.0
   '@angular/animations': ^12.2.0
+  '@angular/cdk': ~12.2.9
   '@angular/cli': ~12.2.0
   '@angular/common': ^12.2.0
   '@angular/compiler': ^12.2.0
@@ -13,6 +14,7 @@ specifiers:
   '@angular/core': ^12.2.0
   '@angular/forms': ^12.2.0
   '@angular/language-service': ^12.2.0
+  '@angular/material': ~12.2.9
   '@angular/platform-browser': ^12.2.0
   '@angular/platform-browser-dynamic': ^12.2.0
   '@angular/router': ^12.2.0
@@ -45,10 +47,12 @@ specifiers:
 
 dependencies:
   '@angular/animations': 12.2.10_@angular+core@12.2.10
+  '@angular/cdk': 12.2.9_32e089ef192d4ca6528d5ffc891dd6ed
   '@angular/common': 12.2.10_@angular+core@12.2.10+rxjs@6.6.7
   '@angular/compiler': 12.2.10
   '@angular/core': 12.2.10_rxjs@6.6.7+zone.js@0.11.4
   '@angular/forms': 12.2.10_c2ebc449cc0474edbc40eb23b83a46ef
+  '@angular/material': 12.2.9_44f3accd501ed852295eb3a33886ae1b
   '@angular/platform-browser': 12.2.10_6af6c47ec9245df1b752195c3fb25d8a
   '@angular/platform-browser-dynamic': 12.2.10_b5d9ec009ace38beb22de4942df57df3
   '@angular/router': 12.2.10_c2ebc449cc0474edbc40eb23b83a46ef
@@ -70,7 +74,7 @@ devDependencies:
   '@nrwl/eslint-plugin-nx': 12.10.0_49c2c561dfdbd5e2a67e050771fdf16e
   '@nrwl/jest': 12.10.0
   '@nrwl/linter': 12.10.0
-  '@nrwl/nx-cloud': 12.3.13
+  '@nrwl/nx-cloud': 12.3.14
   '@nrwl/tao': 12.10.0
   '@nrwl/workspace': 12.10.0_prettier@2.4.1
   '@types/jest': 27.0.2
@@ -323,6 +327,21 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@angular/cdk/12.2.9_32e089ef192d4ca6528d5ffc891dd6ed:
+    resolution: {integrity: sha512-9Wgj69iGAZ4teQqW/zPbVg2RGna+m9i3v0zkWGx/+Uo95rikJCUZBQM4bfeOe+bSJrS77jV5EisBWG7ayNUSzQ==}
+    peerDependencies:
+      '@angular/common': ^12.0.0 || ^13.0.0-0
+      '@angular/core': ^12.0.0 || ^13.0.0-0
+      rxjs: ^6.5.3 || ^7.0.0
+    dependencies:
+      '@angular/common': 12.2.10_@angular+core@12.2.10+rxjs@6.6.7
+      '@angular/core': 12.2.10_rxjs@6.6.7+zone.js@0.11.4
+      rxjs: 6.6.7
+      tslib: 2.3.1
+    optionalDependencies:
+      parse5: 5.1.1
+    dev: false
+
   /@angular/cli/12.2.10:
     resolution: {integrity: sha512-gx2XlOUjAAYyJBBIz4QkgsLLRMdFTQbcOR41/Yv0kgpR6AStrOWhz7tpYPbU6vWMjehpuTaWv4NE5eGjwVTZqg==}
     engines: {node: ^12.14.1 || >=14.0.0, npm: ^6.11.0 || ^7.5.6, yarn: '>= 1.13.0'}
@@ -431,6 +450,25 @@ packages:
     resolution: {integrity: sha512-o9KY39+1bw9xB6vsMWAbcPFWNdTQ/6TSKyQkmAyYca7T6LlNOe/qWln2655ZFPhyG6d9R8nbTi3X0MhMP+H7xQ==}
     engines: {node: ^12.14.1 || >=14.0.0}
     dev: true
+
+  /@angular/material/12.2.9_44f3accd501ed852295eb3a33886ae1b:
+    resolution: {integrity: sha512-+eM67RF038S56m3wsj37h0PyyRD18cQ8V2zmKG1UezH0nnosbmCAwzH9BfcNiIB+/V+k5QMJ/JVu5MjDQqX37w==}
+    peerDependencies:
+      '@angular/animations': ^12.0.0 || ^13.0.0-0
+      '@angular/cdk': 12.2.9
+      '@angular/common': ^12.0.0 || ^13.0.0-0
+      '@angular/core': ^12.0.0 || ^13.0.0-0
+      '@angular/forms': ^12.0.0 || ^13.0.0-0
+      rxjs: ^6.5.3 || ^7.0.0
+    dependencies:
+      '@angular/animations': 12.2.10_@angular+core@12.2.10
+      '@angular/cdk': 12.2.9_32e089ef192d4ca6528d5ffc891dd6ed
+      '@angular/common': 12.2.10_@angular+core@12.2.10+rxjs@6.6.7
+      '@angular/core': 12.2.10_rxjs@6.6.7+zone.js@0.11.4
+      '@angular/forms': 12.2.10_c2ebc449cc0474edbc40eb23b83a46ef
+      rxjs: 6.6.7
+      tslib: 2.3.1
+    dev: false
 
   /@angular/platform-browser-dynamic/12.2.10_b5d9ec009ace38beb22de4942df57df3:
     resolution: {integrity: sha512-CLYHCdTCzpxvMwITRBLlUoa44orDdogMaQfKIMEQsWrynf+zGZKYe5chAut9P/A54PVPUtKeQrfEVFjmbdYR2w==}
@@ -3107,8 +3145,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nrwl/nx-cloud/12.3.13:
-    resolution: {integrity: sha512-t+msfqNhhIvYMSdsh5WMcgpggHjX+RkORboNyGZS1KA6iL9mFABYxroiOeB9JxwGiA4HMjejyOVu0CzKfB8pyw==}
+  /@nrwl/nx-cloud/12.3.14:
+    resolution: {integrity: sha512-8lXkXReF8dqbGtBmHGLxIXQ4rXRacQtyx6U9CAf34leVOZAFrr3mzAt2rWwzeKZqipy9Z2B1CbEZ2aJCROSxtg==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -9528,6 +9566,12 @@ packages:
     dependencies:
       parse5: 6.0.1
     dev: true
+
+  /parse5/5.1.1:
+    resolution: {integrity: sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}

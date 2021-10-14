@@ -21,7 +21,10 @@
               "apps/airbash-frontend/src/favicon.ico",
               "apps/airbash-frontend/src/assets"
             ],
-            "styles": ["apps/airbash-frontend/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "apps/airbash-frontend/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

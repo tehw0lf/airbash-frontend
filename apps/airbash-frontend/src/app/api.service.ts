@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
 import { Capture } from './types/capture';
@@ -16,19 +15,14 @@ export class ApiService {
     return this.http.get<Capture[]>(`${environment.API_URL}/captures`);
   }
 
-  getCapture(id: number): Observable<Capture> {
-    return this.http.get<Capture>(`${environment.API_URL}/captures/${id}`);
+  editCapture(id: number, capture: Capture): Observable<void> {
+    return this.http.put<void>(
+      `${environment.API_URL}/captures/${id}`,
+      capture
+    );
   }
 
-  deleteCapture(id: number): Observable<boolean> {
-    return this.http
-      .delete<void>(`${environment.API_URL}/captures/${id}`)
-      .pipe(map(() => true));
-  }
-
-  editCapture(id: number, capture: Capture): Observable<boolean> {
-    return this.http
-      .put<void>(`${environment.API_URL}/captures/${id}`, capture)
-      .pipe(map(() => true));
+  deleteCapture(id: number): Observable<void> {
+    return this.http.delete<void>(`${environment.API_URL}/captures/${id}`);
   }
 }

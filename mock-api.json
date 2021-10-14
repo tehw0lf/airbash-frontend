@@ -1,0 +1,74 @@
+{
+  "captures": [
+    {
+      "id": 0,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "00:11:22:33:44:55",
+      "essid": "Test AP 0",
+      "pmkid": "12345678",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 1,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "11:00:22:33:44:55",
+      "essid": "Test AP 1",
+      "pmkid": "abcdefgh",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 2,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "11:22:00:33:44:55",
+      "essid": "Test AP 2",
+      "pmkid": "1234abcd",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 3,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "11:22:33:00:44:55",
+      "essid": "Test AP 3",
+      "pmkid": "1a2b3c4d",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 4,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "11:22:33:44:00:55",
+      "essid": "Test AP 4",
+      "pmkid": "thisistotallysafe",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 5,
+      "latitude": "55.555555555",
+      "longitude": "55.555555555",
+      "bssid": "11:22:33:44:55:00",
+      "essid": "Test AP 5",
+      "pmkid": "ilovewps",
+      "psk": "",
+      "processed": 1
+    },
+    {
+      "id": 6,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    }
+  ]
+}

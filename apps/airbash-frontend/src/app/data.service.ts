@@ -35,7 +35,7 @@ export class DataService {
     );
   }
 
-  deleteCapture(id: number): Observable<void> {
+  removeCapture(id: number): Observable<void> {
     return this.apiService.deleteCapture(id).pipe(
       tap(() => {
         const updatedCaptures = this.capturesSubject.value.filter(

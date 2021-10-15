@@ -15,7 +15,7 @@ export class ApiService {
     return this.http.get<Capture[]>(`${environment.API_URL}/captures`);
   }
 
-  editCapture(capture: Capture): Observable<void> {
+  updateCapture(capture: Capture): Observable<void> {
     if (capture.id >= 0) {
       return this.http.put<void>(
         `${environment.API_URL}/captures/${capture.id}`,

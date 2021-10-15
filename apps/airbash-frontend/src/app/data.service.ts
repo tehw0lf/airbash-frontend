@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 import { ApiService } from './api.service';
 import { Capture } from './types/capture';
@@ -18,35 +18,38 @@ export class DataService {
     this.fetchCaptures();
   }
 
-  updateCapture(id: number, capture: Capture): Observable<boolean> {
-    return this.apiService.editCapture(id, capture).pipe(
-      map(() => true),
-      tap((successful: boolean) => {
-        if (successful) {
-          const updatedCaptures = this.capturesSubject.value.map<Capture>(
-            (currentCapture: Capture) => {
-              if (currentCapture.id === capture.id) {
-                return capture;
-              } else {
-                return currentCapture;
-              }
+  editCapture(capture: Capture): Observable<void> {
+    return this.apiService.updateCapture(capture).pipe(
+      tap(() => {
+        const updatedCaptures = this.capturesSubject.value.map<Capture>(
+          (currentCapture: Capture) => {
+            if (currentCapture.id === capture.id) {
+              return capture;
+            } else {
+              return currentCapture;
             }
-          );
-          this.capturesSubject.next(updatedCaptures);
-          return true;
-        }
-        return false;
+          }
+        );
+        this.capturesSubject.next(updatedCaptures);
       })
     );
   }
 
-  deleteCapture(id: number): Observable<boolean> {
-    return this.apiService.deleteCapture(id).pipe(map(() => true));
+  deleteCapture(id: number): Observable<void> {
+    return this.apiService.deleteCapture(id).pipe(
+      tap(() => {
+        const updatedCaptures = this.capturesSubject.value.filter(
+          (capture: Capture) => capture.id !== id
+        );
+        this.capturesSubject.next(updatedCaptures);
+      })
+    );
   }
 
   private fetchCaptures(): void {
     this.apiService
       .getCaptures()
-      .pipe(tap((captures: Capture[]) => this.capturesSubject.next(captures)));
+      .pipe(tap((captures: Capture[]) => this.capturesSubject.next(captures)))
+      .subscribe();
   }
 }

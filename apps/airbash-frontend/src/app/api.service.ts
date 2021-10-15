@@ -15,11 +15,15 @@ export class ApiService {
     return this.http.get<Capture[]>(`${environment.API_URL}/captures`);
   }
 
-  editCapture(id: number, capture: Capture): Observable<void> {
-    return this.http.put<void>(
-      `${environment.API_URL}/captures/${id}`,
-      capture
-    );
+  editCapture(capture: Capture): Observable<void> {
+    if (capture.id >= 0) {
+      return this.http.put<void>(
+        `${environment.API_URL}/captures/${capture.id}`,
+        capture
+      );
+    } else {
+      throw new Error('Capture without id cannot be matched');
+    }
   }
 
   deleteCapture(id: number): Observable<void> {

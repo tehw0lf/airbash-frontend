@@ -30,7 +30,7 @@ export class ApiService {
           })
         );
     } else {
-      throw new Error('Field capture.id is required to update capture');
+      throw new Error(`Capture id needs to be 0 or higher. Was ${capture.id}`);
     }
   }
 

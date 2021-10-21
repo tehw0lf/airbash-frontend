@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { TableEditorComponent } from './table-editor/table-editor.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TableEditorComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

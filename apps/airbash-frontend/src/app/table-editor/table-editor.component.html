@@ -1,0 +1,34 @@
+<mat-table [dataSource]="data$">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.id }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="latitude">
+    <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.latitude }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="longitude">
+    <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.longitude }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="bssid">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.bssid }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="essid">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.essid }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pmkid">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.pmkid }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="psk">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.psk }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="processed">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let capture">{{ capture.processed }}</mat-cell>
+  </ng-container>
+</mat-table>

@@ -69,6 +69,12 @@
     <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>
     <mat-cell *matCellDef="let row">{{ row.processed }}</mat-cell>
   </ng-container>
+  <ng-container matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+    <mat-cell>
+      <mat-icon *matCellDef="let row" (click)="delete(row.id)">delete</mat-icon>
+    </mat-cell>
+  </ng-container>
 
   <mat-header-row
     *matHeaderRowDef="[
@@ -79,7 +85,8 @@
       'essid',
       'pmkid',
       'psk',
-      'processed'
+      'processed',
+      'delete'
     ]"
   ></mat-header-row>
   <mat-row
@@ -93,7 +100,8 @@
         'essid',
         'pmkid',
         'psk',
-        'processed'
+        'processed',
+        'delete'
       ]
     "
   ></mat-row>

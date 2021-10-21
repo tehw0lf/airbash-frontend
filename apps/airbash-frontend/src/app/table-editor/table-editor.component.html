@@ -1,31 +1,69 @@
 <mat-table [dataSource]="data$">
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      {{ row.id }}
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="latitude">
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.latitude }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'latitude', $event)"
+        value="{{ row.latitude }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="longitude">
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.longitude }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'longitude', $event)"
+        value="{{ row.longitude }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="bssid">
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.bssid }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'bssid', $event)"
+        value="{{ row.bssid }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="essid">
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.essid }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'essid', $event)"
+        value="{{ row.essid }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="pmkid">
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.pmkid }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'pmkid', $event)"
+        value="{{ row.pmkid }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="psk">
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.psk }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateField(row, 'psk', $event)"
+        value="{{ row.psk }}"
+      />
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="processed">
     <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>

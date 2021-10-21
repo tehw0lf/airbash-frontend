@@ -1,4 +1,5 @@
 export interface Capture {
+  [index: string]: string | number;
   id: number;
   latitude: string;
   longitude: string;

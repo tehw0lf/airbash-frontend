@@ -1,1 +1,4 @@
-<airbash-frontend-table-editor></airbash-frontend-table-editor>
+<airbash-frontend-table-editor
+  [ngClass]="{ 'light-theme': lightTheme }"
+></airbash-frontend-table-editor>
+<button (click)="lightTheme = !lightTheme">SWITCH</button>

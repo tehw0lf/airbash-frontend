@@ -25,6 +25,23 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
+  enableInputField(clickEvent: Event): void {
+    const clickedInputElement = clickEvent.target as HTMLInputElement;
+    if (clickedInputElement.disabled) {
+      clickedInputElement.disabled = false;
+    }
+  }
+
+  disableInputField(clickEvent: Event): void {
+    const clickedElement = clickEvent.target as HTMLElement;
+    const inputElement = clickedElement.firstChild as HTMLInputElement;
+    if (!inputElement.disabled) {
+      setTimeout(() => {
+        inputElement.disabled = true;
+      }, 100);
+    }
+  }
+
   delete(rowId: number) {
     return this.dataService
       .removeCapture(rowId)
@@ -32,7 +49,7 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
-  updateField(row: Capture, fieldname: string, inputChangedEvent: Event): void {
+  updateValue(row: Capture, fieldname: string, inputChangedEvent: Event): void {
     const updatedValue = (inputChangedEvent.target as HTMLInputElement).value;
     if (updatedValue !== null && updatedValue !== undefined) {
       const updatedCapture = row;

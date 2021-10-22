@@ -7,61 +7,91 @@
   </ng-container>
   <ng-container matColumnDef="latitude">
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'latitude', $event)"
+        (change)="updateValue(row, 'latitude', $event)"
         value="{{ row.latitude }}"
+        disabled
       />
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="longitude">
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'longitude', $event)"
+        (change)="updateValue(row, 'longitude', $event)"
         value="{{ row.longitude }}"
+        disabled
       />
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="bssid">
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'bssid', $event)"
+        (change)="updateValue(row, 'bssid', $event)"
         value="{{ row.bssid }}"
+        disabled
       />
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="essid">
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'essid', $event)"
+        (change)="updateValue(row, 'essid', $event)"
         value="{{ row.essid }}"
+        disabled
       />
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="pmkid">
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'pmkid', $event)"
+        (change)="updateValue(row, 'pmkid', $event)"
         value="{{ row.pmkid }}"
+        disabled
       />
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="psk">
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell
+      (click)="enableInputField($event)"
+      (mouseleave)="disableInputField($event)"
+      *matCellDef="let row"
+    >
       <input
         mat-input
-        (change)="updateField(row, 'psk', $event)"
+        (change)="updateValue(row, 'psk', $event)"
         value="{{ row.psk }}"
+        disabled
       />
     </mat-cell>
   </ng-container>

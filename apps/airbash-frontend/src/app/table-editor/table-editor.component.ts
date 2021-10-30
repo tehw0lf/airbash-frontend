@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { Capture } from '../types/capture';
 
 @Component({

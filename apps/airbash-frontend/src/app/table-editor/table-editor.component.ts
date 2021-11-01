@@ -25,19 +25,27 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  enableInputField(clickEvent: Event): void {
-    const clickedInputElement = clickEvent.target as HTMLInputElement;
-    if (clickedInputElement.disabled) {
-      clickedInputElement.disabled = false;
+  enableAndShowInputField(clickEvent: Event): void {
+    const clickedSpan = clickEvent.target as HTMLSpanElement;
+    const siblingInput = clickedSpan.previousSibling as HTMLInputElement;
+
+    if (siblingInput.disabled && siblingInput.hidden) {
+      siblingInput.disabled = false;
+      siblingInput.hidden = false;
+
+      clickedSpan.hidden = true;
     }
   }
 
-  disableInputField(clickEvent: Event): void {
-    const clickedElement = clickEvent.target as HTMLElement;
-    const inputElement = clickedElement.firstChild as HTMLInputElement;
-    if (!inputElement.disabled) {
+  disableAndHideInputField(leaveEvent: Event): void {
+    const leftInputElement = leaveEvent.target as HTMLInputElement;
+    const siblingSpan = leftInputElement.nextSibling as HTMLSpanElement;
+
+    if (!leftInputElement.disabled && !leftInputElement.hidden) {
       setTimeout(() => {
-        inputElement.disabled = true;
+        leftInputElement.disabled = true;
+        leftInputElement.hidden = true;
+        siblingSpan.hidden = false;
       }, 100);
     }
   }

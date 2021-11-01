@@ -7,97 +7,93 @@
   </ng-container>
   <ng-container matColumnDef="latitude">
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'latitude', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.latitude }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.latitude }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="longitude">
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'longitude', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.longitude }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.longitude }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="bssid">
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'bssid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.bssid }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.bssid }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="essid">
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'essid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.essid }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.essid }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="pmkid">
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'pmkid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.pmkid }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.pmkid }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="psk">
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
-    <mat-cell
-      (click)="enableInputField($event)"
-      (mouseleave)="disableInputField($event)"
-      *matCellDef="let row"
-    >
+    <mat-cell *matCellDef="let row">
       <input
         mat-input
         (change)="updateValue(row, 'psk', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
         value="{{ row.psk }}"
         disabled
+        hidden
       />
+      <span (click)="enableAndShowInputField($event)">{{ row.psk }}</span>
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="processed">
     <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.processed }}</mat-cell>
+    <mat-cell *matCellDef="let row">
+      <span>{{ row.processed }}</span>
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="delete">
     <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>

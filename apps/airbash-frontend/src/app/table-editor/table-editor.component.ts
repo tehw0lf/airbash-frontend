@@ -68,7 +68,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       return '<no value>';
     }
 
-    console.log(value);
     return value;
   }
 

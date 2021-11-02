@@ -28,7 +28,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
   enableAndShowInputField(clickEvent: Event): void {
     const clickedSpan = clickEvent.target as HTMLSpanElement;
     const siblingInput = clickedSpan.previousSibling as HTMLInputElement;
-
     if (siblingInput.disabled && siblingInput.hidden) {
       siblingInput.disabled = false;
       siblingInput.hidden = false;
@@ -57,9 +56,29 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
+  getRowValue(value: number | string): number | string {
+    if (
+      typeof value === 'string' &&
+      (value === null || value === undefined || value.trim() === '')
+    ) {
+      return '<no value>';
+    }
+
+    if (typeof value === 'number' && (value === null || value === undefined)) {
+      return '<no value>';
+    }
+
+    console.log(value);
+    return value;
+  }
+
   updateValue(row: Capture, fieldname: string, inputChangedEvent: Event): void {
     const updatedValue = (inputChangedEvent.target as HTMLInputElement).value;
-    if (updatedValue !== null && updatedValue !== undefined) {
+    if (
+      updatedValue !== null &&
+      updatedValue !== undefined &&
+      updatedValue.trim() !== ''
+    ) {
       const updatedCapture = row;
       updatedCapture[fieldname] = updatedValue;
 

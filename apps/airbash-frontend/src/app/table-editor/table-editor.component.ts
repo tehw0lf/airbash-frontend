@@ -49,8 +49,8 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     }
   }
 
-  delete(rowId: number) {
-    return this.dataService
+  delete(rowId: number): void {
+    this.dataService
       .removeCapture(rowId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe();
@@ -58,13 +58,10 @@ export class TableEditorComponent implements OnInit, OnDestroy {
 
   getRowValue(value: number | string): number | string {
     if (
-      typeof value === 'string' &&
-      (value === null || value === undefined || value.trim() === '')
+      value === null ||
+      value === undefined ||
+      (typeof value === 'string' && value.trim() === '')
     ) {
-      return '<no value>';
-    }
-
-    if (typeof value === 'number' && (value === null || value === undefined)) {
       return '<no value>';
     }
 

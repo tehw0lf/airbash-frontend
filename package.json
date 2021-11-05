@@ -8,7 +8,7 @@
     "start": "json-server --watch mock-api.json & nx serve && json-server --stop",
     "build": "nx build",
     "lint": "nx lint",
-    "test": "nx test"
+    "test": "nx test --skip-nx-cache --detect-open-handles"
   },
   "private": true,
   "dependencies": {

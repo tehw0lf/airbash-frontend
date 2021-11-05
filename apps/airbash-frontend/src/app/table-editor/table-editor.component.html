@@ -5,6 +5,7 @@
       <span>{{ getRowValue(row.id) }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="latitude">
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -23,6 +24,7 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="longitude">
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -41,6 +43,7 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="bssid">
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -59,6 +62,7 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="essid">
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -76,6 +80,7 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="psk">
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -94,6 +99,7 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="pmkid">
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
     <mat-cell *matCellDef="let row">
@@ -112,16 +118,18 @@
       }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="processed">
     <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <span>{{ getRowValue(row.processed) }}</span>
     </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="delete">
     <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
-    <mat-cell>
-      <mat-icon *matCellDef="let row" (click)="delete(row.id)">delete</mat-icon>
+    <mat-cell *matCellDef="let row">
+      <mat-icon (click)="delete(row.id)">delete</mat-icon>
     </mat-cell>
   </ng-container>
 

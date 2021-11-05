@@ -69,7 +69,9 @@ export class TableEditorComponent implements OnInit, OnDestroy {
   }
 
   updateValue(row: Capture, fieldname: string, inputChangedEvent: Event): void {
-    const updatedValue = (inputChangedEvent.target as HTMLInputElement).value;
+    const updatedValue: number | string = (
+      inputChangedEvent.target as HTMLInputElement
+    ).value;
     if (
       updatedValue !== null &&
       updatedValue !== undefined &&

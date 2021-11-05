@@ -2,10 +2,10 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { tap } from 'rxjs/operators';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
+import { mockCaptures } from '../testdata/fixtures';
+import { Capture } from '../types/capture';
 import { ApiService } from './api.service';
-import { mockCaptures } from './testdata/fixtures';
-import { Capture } from './types/capture';
 
 describe('ApiService', () => {
   let service: ApiService;

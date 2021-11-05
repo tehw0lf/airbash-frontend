@@ -2,10 +2,10 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
+import { mockCaptures } from '../testdata/fixtures';
+import { Capture } from '../types/capture';
 import { ApiService } from './api.service';
 import { DataService } from './data.service';
-import { mockCaptures } from './testdata/fixtures';
-import { Capture } from './types/capture';
 
 const mockApiService = {
   getCaptures: jest.fn(() => of(mockCaptures)),

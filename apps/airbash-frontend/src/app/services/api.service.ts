@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { environment } from '../environments/environment';
-import { Capture } from './types/capture';
+import { environment } from '../../environments/environment';
+import { Capture } from '../types/capture';
 
 @Injectable({
   providedIn: 'root',

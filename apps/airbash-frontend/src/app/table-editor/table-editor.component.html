@@ -1,0 +1,165 @@
+<mat-table [dataSource]="data$">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <span>{{ getRowValue(row.id) }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="latitude">
+    <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'latitude', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.latitude }}"
+        maxlength="12"
+        size="9"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.latitude)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="longitude">
+    <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'longitude', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.longitude }}"
+        maxlength="12"
+        size="9"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.longitude)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="bssid">
+    <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'bssid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.bssid }}"
+        maxlength="17"
+        size="12"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.bssid)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="essid">
+    <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'essid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.essid }}"
+        size="29"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.essid)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="psk">
+    <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'psk', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.psk }}"
+        maxlength="64"
+        size="36"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.psk)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="pmkid">
+    <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <input
+        mat-input
+        (change)="updateValue(row, 'pmkid', $event)"
+        (mouseleave)="disableAndHideInputField($event)"
+        value="{{ row.pmkid }}"
+        maxlength="87"
+        size="44"
+        disabled
+        hidden
+      />
+      <span (click)="enableAndShowInputField($event)">{{
+        getRowValue(row.pmkid)
+      }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="processed">
+    <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <span>{{ getRowValue(row.processed) }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-icon (click)="delete(row.id)">delete</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row
+    *matHeaderRowDef="[
+      'id',
+      'latitude',
+      'longitude',
+      'bssid',
+      'essid',
+      'psk',
+      'pmkid',
+      'processed',
+      'delete'
+    ]"
+  ></mat-header-row>
+  <mat-row
+    *matRowDef="
+      let row;
+      columns: [
+        'id',
+        'latitude',
+        'longitude',
+        'bssid',
+        'essid',
+        'psk',
+        'pmkid',
+        'processed',
+        'delete'
+      ]
+    "
+  ></mat-row>
+</mat-table>

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
+import { Capture } from '../types/capture';
 import { ApiService } from './api.service';
-import { Capture } from './types/capture';
 
 @Injectable({
   providedIn: 'root',

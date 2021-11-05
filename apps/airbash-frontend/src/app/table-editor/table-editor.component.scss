@@ -1,0 +1,55 @@
+.mat-column-id {
+  flex: 0 0 2%;
+  justify-content: center;
+}
+
+.mat-column-latitude {
+  flex: 0 0 10%;
+  justify-content: center;
+}
+
+.mat-column-longitude {
+  flex: 0 0 10%;
+  justify-content: center;
+}
+
+.mat-column-bssid {
+  flex: 0 0 15%;
+  justify-content: center;
+}
+
+.mat-column-essid {
+  flex: 0 0 15%;
+}
+
+.mat-column-psk {
+  flex: 0 0 18%;
+  overflow: auto;
+}
+
+.mat-column-pmkid {
+  flex: 0 0 20%;
+  overflow: auto;
+}
+
+.mat-column-processed {
+  flex: 0 0 4%;
+  justify-content: center;
+}
+
+.mat-column-delete {
+  flex: 0 0 4%;
+  justify-content: center;
+}
+
+.mat-header-cell:last-of-type {
+  padding-right: 0;
+}
+
+.mat-cell {
+  align-items: stretch;
+}
+
+span {
+  align-self: center;
+}

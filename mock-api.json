@@ -6,8 +6,8 @@
       "longitude": "55.555555555",
       "bssid": "00:11:22:33:44:55",
       "essid": "Test AP 0",
-      "pmkid": "12345678",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "12345678",
       "processed": 1
     },
     {
@@ -16,8 +16,8 @@
       "longitude": "55.555555555",
       "bssid": "11:00:22:33:44:55",
       "essid": "Test AP 1",
-      "pmkid": "abcdefgh",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "abcdefgh",
       "processed": 1
     },
     {
@@ -26,8 +26,8 @@
       "longitude": "55.555555555",
       "bssid": "11:22:00:33:44:55",
       "essid": "Test AP 2",
-      "pmkid": "1234abcd",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "1234abcd",
       "processed": 1
     },
     {
@@ -36,8 +36,8 @@
       "longitude": "55.555555555",
       "bssid": "11:22:33:00:44:55",
       "essid": "Test AP 3",
-      "pmkid": "1a2b3c4d",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "1a2b3c4d",
       "processed": 1
     },
     {
@@ -46,8 +46,8 @@
       "longitude": "55.555555555",
       "bssid": "11:22:33:44:00:55",
       "essid": "Test AP 4",
-      "pmkid": "thisistotallysafe",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "thisistotallysafe",
       "processed": 1
     },
     {
@@ -56,8 +56,8 @@
       "longitude": "55.555555555",
       "bssid": "11:22:33:44:55:00",
       "essid": "Test AP 5",
-      "pmkid": "ilovewps",
-      "psk": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
+      "psk": "ilovewps",
       "processed": 1
     },
     {
@@ -66,7 +66,7 @@
       "longitude": "",
       "bssid": "00:00:00:00:00:00",
       "essid": "",
-      "pmkid": "",
+      "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
       "psk": "",
       "processed": 0
     }

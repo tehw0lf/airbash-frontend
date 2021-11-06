@@ -38,15 +38,16 @@
 }
 
 .mat-column-delete {
-  flex: 0 0 4%;
+  flex: 0 0 2%;
   justify-content: center;
+  padding-left: 1.5%;
 }
 
-.mat-header-cell:last-of-type {
-  padding-right: 0;
+.delete {
+  cursor: pointer;
 }
 
-.mat-cell {
+mat-cell {
   align-items: stretch;
 }
 

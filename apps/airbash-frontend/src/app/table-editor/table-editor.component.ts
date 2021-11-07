@@ -76,10 +76,12 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     const updatedValue: number | string = (
       leaveEvent.target as HTMLInputElement
     ).value;
+
     if (
       updatedValue !== null &&
       updatedValue !== undefined &&
-      updatedValue.trim() !== ''
+      updatedValue.trim() !== '' &&
+      updatedValue !== row[fieldname]
     ) {
       const updatedCapture = row;
       updatedCapture[fieldname] = updatedValue;
@@ -89,6 +91,7 @@ export class TableEditorComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe();
     }
+
     this.disableAndHideInputField(leaveEvent);
   }
 }

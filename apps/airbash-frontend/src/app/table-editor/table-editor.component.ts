@@ -49,7 +49,7 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     }
   }
 
-  delete(rowId: number): void {
+  deleteRow(rowId: number): void {
     this.dataService
       .removeCapture(rowId)
       .pipe(takeUntil(this.unsubscribe$))

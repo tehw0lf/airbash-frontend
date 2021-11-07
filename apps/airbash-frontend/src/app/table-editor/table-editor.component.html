@@ -11,8 +11,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'latitude', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'latitude', $event)"
         value="{{ row.latitude }}"
         maxlength="12"
         size="9"
@@ -30,8 +29,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'longitude', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'longitude', $event)"
         value="{{ row.longitude }}"
         maxlength="12"
         size="9"
@@ -49,8 +47,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'bssid', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'bssid', $event)"
         value="{{ row.bssid }}"
         maxlength="17"
         size="12"
@@ -68,8 +65,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'essid', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'essid', $event)"
         value="{{ row.essid }}"
         size="29"
         disabled
@@ -86,8 +82,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'psk', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'psk', $event)"
         value="{{ row.psk }}"
         maxlength="64"
         size="36"
@@ -105,8 +100,7 @@
     <mat-cell *matCellDef="let row">
       <input
         mat-input
-        (change)="updateValue(row, 'pmkid', $event)"
-        (mouseleave)="disableAndHideInputField($event)"
+        (mouseleave)="updateValueAndDisableField(row, 'pmkid', $event)"
         value="{{ row.pmkid }}"
         size="44"
         disabled

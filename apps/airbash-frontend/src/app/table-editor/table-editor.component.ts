@@ -68,9 +68,13 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     return value;
   }
 
-  updateValue(row: Capture, fieldname: string, inputChangedEvent: Event): void {
+  updateValueAndDisableField(
+    row: Capture,
+    fieldname: string,
+    leaveEvent: Event
+  ): void {
     const updatedValue: number | string = (
-      inputChangedEvent.target as HTMLInputElement
+      leaveEvent.target as HTMLInputElement
     ).value;
     if (
       updatedValue !== null &&
@@ -85,5 +89,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe();
     }
+    this.disableAndHideInputField(leaveEvent);
   }
 }

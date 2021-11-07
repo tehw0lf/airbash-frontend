@@ -36,4 +36,18 @@ describe('TableEditorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('row value', () => {
+    it('should be sanizited to the default string when the value is an empty string', () => {
+      expect(component.getRowValue('')).toEqual('<no value>');
+    });
+
+    it('should return a valid number', () => {
+      expect(component.getRowValue(0)).toEqual(0);
+    });
+
+    it('should return a valid string', () => {
+      expect(component.getRowValue('value')).toEqual('value');
+    });
+  });
 });

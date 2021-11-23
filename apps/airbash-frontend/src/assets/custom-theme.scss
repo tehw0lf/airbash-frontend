@@ -16,8 +16,6 @@ $accent-light: mat-palette($mat-light-green);
 $warn-light: mat-palette($mat-red);
 
 $light-theme: mat-light-theme($primary-light, $accent-light, $warn-light);
-@include angular-material-theme($light-theme);
-
 //for dark theme
 $primary-dark: mat-palette($mat-orange);
 $accent-dark: mat-palette($mat-yellow);
@@ -25,10 +23,13 @@ $warn-dark: mat-palette($mat-red);
 
 $dark-theme: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
 
+@include angular-material-theme($light-theme);
+
 .dark-theme {
   @include angular-material-theme($dark-theme);
 }
-
+/*
 .light-theme {
   @include angular-material-theme($light-theme);
 }
+*/

@@ -33,6 +33,11 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       siblingInput.hidden = false;
 
       clickedSpan.hidden = true;
+    } else {
+      siblingInput.disabled = false;
+      siblingInput.hidden = false;
+
+      clickedSpan.hidden = true;
     }
   }
 

@@ -10,6 +10,7 @@
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="latitude-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'latitude', $event)"
         value="{{ row.latitude }}"
@@ -18,7 +19,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="latitude-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.latitude)
       }}</span>
     </mat-cell>
@@ -28,6 +29,7 @@
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="longitude-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'longitude', $event)"
         value="{{ row.longitude }}"
@@ -36,7 +38,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="longitude-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.longitude)
       }}</span>
     </mat-cell>
@@ -46,6 +48,7 @@
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="bssid-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'bssid', $event)"
         value="{{ row.bssid }}"
@@ -54,7 +57,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="bssid-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.bssid)
       }}</span>
     </mat-cell>
@@ -64,6 +67,7 @@
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="essid-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'essid', $event)"
         value="{{ row.essid }}"
@@ -71,7 +75,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="essid-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.essid)
       }}</span>
     </mat-cell>
@@ -81,6 +85,7 @@
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="psk-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'psk', $event)"
         value="{{ row.psk }}"
@@ -89,7 +94,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="psk-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.psk)
       }}</span>
     </mat-cell>
@@ -99,6 +104,7 @@
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <input
+        id="pmkid-input"
         mat-input
         (mouseleave)="updateValueAndDisableField(row, 'pmkid', $event)"
         value="{{ row.pmkid }}"
@@ -106,7 +112,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
+      <span id="pmkid-span" (click)="enableAndShowInputField($event)">{{
         getRowValue(row.pmkid)
       }}</span>
     </mat-cell>
@@ -123,7 +129,9 @@
     <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <span>
-        <mat-icon class="delete" (click)="deleteRow(row.id)">delete</mat-icon>
+        <mat-icon id="delete" class="delete" (click)="deleteRow(row.id)"
+          >delete</mat-icon
+        >
       </span>
     </mat-cell>
   </ng-container>

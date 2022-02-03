@@ -2,7 +2,7 @@
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
     <mat-cell *matCellDef="let row">
-      <span>{{ getRowValue(row.id) }}</span>
+      <span>{{ row.id }}</span>
     </mat-cell>
   </ng-container>
 
@@ -19,9 +19,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.latitude)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.latitude }}</span>
     </mat-cell>
   </ng-container>
 
@@ -38,9 +36,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.longitude)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.longitude }}</span>
     </mat-cell>
   </ng-container>
 
@@ -57,9 +53,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.bssid)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.bssid }}</span>
     </mat-cell>
   </ng-container>
 
@@ -75,9 +69,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.essid)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.essid }}</span>
     </mat-cell>
   </ng-container>
 
@@ -94,9 +86,7 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.psk)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.psk }}</span>
     </mat-cell>
   </ng-container>
 
@@ -113,16 +103,14 @@
         disabled
         hidden
       />
-      <span (click)="enableAndShowInputField($event)">{{
-        getRowValue(row.pmkid)
-      }}</span>
+      <span (click)="enableAndShowInputField($event)">{{ row.pmkid }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="processed">
     <mat-header-cell *matHeaderCellDef>Processed</mat-header-cell>
     <mat-cell *matCellDef="let row">
-      <span>{{ getRowValue(row.processed) }}</span>
+      <span>{{ row.processed }}</span>
     </mat-cell>
   </ng-container>
 

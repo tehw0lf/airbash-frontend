@@ -40,10 +40,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     const leftInputElement = leaveEvent.target as HTMLInputElement;
     const siblingSpan = leftInputElement.nextSibling as HTMLSpanElement;
 
-    console.log(leftInputElement);
-    console.log(leftInputElement.defaultValue);
-    console.log(leftInputElement.value);
-
     if (
       leftInputElement.defaultValue !== leftInputElement.value &&
       leftInputElement.value !== '<no value>'

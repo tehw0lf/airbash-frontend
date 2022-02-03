@@ -67,18 +67,12 @@ export class TableEditorComponent implements OnInit, OnDestroy {
     const updatedValue: number | string = (
       inputChangedEvent.target as HTMLInputElement
     ).value;
-    if (
-      updatedValue !== null &&
-      updatedValue !== undefined &&
-      updatedValue.trim() !== ''
-    ) {
-      const updatedCapture = row;
-      updatedCapture[fieldname] = updatedValue;
+    const updatedCapture = row;
+    updatedCapture[fieldname] = updatedValue;
 
-      this.dataService
-        .editCapture(updatedCapture)
-        .pipe(takeUntil(this.unsubscribe$))
-        .subscribe();
-    }
+    this.dataService
+      .editCapture(updatedCapture)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe();
   }
 }

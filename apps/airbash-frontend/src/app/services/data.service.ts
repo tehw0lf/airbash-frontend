@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 import { Capture } from '../types/capture';
 import { ApiService } from './api.service';
@@ -21,16 +21,9 @@ export class DataService {
   editCapture(capture: Capture): Observable<void> {
     return this.apiService.updateCapture(this.serializeValues(capture)).pipe(
       tap(() => {
-        const updatedCaptures = this.capturesSubject.value.map<Capture>(
-          (currentCapture: Capture) => {
-            if (currentCapture.id === capture.id) {
-              return capture;
-            } else {
-              return currentCapture;
-            }
-          }
+        this.capturesSubject.next(
+          this.deserializeValues(this.capturesSubject.value)
         );
-        this.capturesSubject.next(updatedCaptures);
       })
     );
   }
@@ -50,8 +43,9 @@ export class DataService {
     this.apiService
       .getCaptures()
       .pipe(
-        tap((captures: Capture[]) => this.capturesSubject.next(captures)),
-        map((captures: Capture[]) => this.deserializeValues(captures))
+        tap((captures: Capture[]) =>
+          this.capturesSubject.next(this.deserializeValues(captures))
+        )
       )
       .subscribe();
   }
@@ -65,8 +59,9 @@ export class DataService {
         (typeof value === 'string' && value === '<no value>')
       ) {
         capture[key] = '';
+      } else {
+        capture[key] = value;
       }
-      capture[key] = value;
     });
     return capture;
   }

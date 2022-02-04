@@ -1,0 +1,14 @@
+.switch-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5%;
+
+  .dark-icon {
+    color: black;
+  }
+
+  .light-icon {
+    color: yellow;
+  }
+}

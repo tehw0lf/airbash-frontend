@@ -11,6 +11,17 @@ import { Capture } from '../types/capture';
   styleUrls: ['./table-editor.component.scss'],
 })
 export class TableEditorComponent implements OnInit, OnDestroy {
+  displayedColumns = [
+    'id',
+    'latitude',
+    'longitude',
+    'bssid',
+    'essid',
+    'psk',
+    'pmkid',
+    'processed',
+    'delete',
+  ];
   data$: Observable<Capture[]> = of([]);
   unsubscribe$: Subject<void> = new Subject();
 

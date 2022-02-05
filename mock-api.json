@@ -69,6 +69,86 @@
       "pmkid": "e33c525441bf7588c53966addb685a4c*98ded0be2346*fcc2333f478f*546f6e323534386661323535306b616932353133",
       "psk": "",
       "processed": 0
+    },
+    {
+      "id": 7,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 8,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 9,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 10,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 10,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 11,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 12,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
+    },
+    {
+      "id": 13,
+      "latitude": "",
+      "longitude": "",
+      "bssid": "00:00:00:00:00:00",
+      "essid": "",
+      "pmkid": "",
+      "psk": "",
+      "processed": 0
     }
   ]
 }

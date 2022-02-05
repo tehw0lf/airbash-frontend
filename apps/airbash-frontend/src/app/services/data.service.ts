@@ -19,18 +19,11 @@ export class DataService {
   }
 
   editCapture(capture: Capture): Observable<void> {
-    return this.apiService.updateCapture(capture).pipe(
+    return this.apiService.updateCapture(this.serializeValues(capture)).pipe(
       tap(() => {
-        const updatedCaptures = this.capturesSubject.value.map<Capture>(
-          (currentCapture: Capture) => {
-            if (currentCapture.id === capture.id) {
-              return capture;
-            } else {
-              return currentCapture;
-            }
-          }
+        this.capturesSubject.next(
+          this.deserializeValues(this.capturesSubject.value)
         );
-        this.capturesSubject.next(updatedCaptures);
       })
     );
   }
@@ -49,7 +42,45 @@ export class DataService {
   private fetchCaptures(): void {
     this.apiService
       .getCaptures()
-      .pipe(tap((captures: Capture[]) => this.capturesSubject.next(captures)))
+      .pipe(
+        tap((captures: Capture[]) =>
+          this.capturesSubject.next(this.deserializeValues(captures))
+        )
+      )
       .subscribe();
+  }
+
+  private serializeValues(capture: Capture): Capture {
+    Object.keys(capture).forEach((key: string) => {
+      const value = capture[key];
+      if (
+        value === null ||
+        value === undefined ||
+        (typeof value === 'string' && value === '<no value>')
+      ) {
+        capture[key] = '';
+      } else {
+        capture[key] = value;
+      }
+    });
+    return capture;
+  }
+
+  private deserializeValues(captures: Capture[]): Capture[] {
+    captures.forEach((capture: Capture) => {
+      Object.keys(capture).forEach((key: string) => {
+        const value = capture[key];
+        if (
+          value === null ||
+          value === undefined ||
+          (typeof value === 'string' && value.trim() === '')
+        ) {
+          capture[key] = '<no value>';
+        } else {
+          capture[key] = value;
+        }
+      });
+    });
+    return captures;
   }
 }

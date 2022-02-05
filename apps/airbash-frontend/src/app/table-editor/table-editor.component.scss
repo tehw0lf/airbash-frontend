@@ -20,16 +20,20 @@
 
 .mat-column-essid {
   flex: 0 0 15%;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 
 .mat-column-psk {
   flex: 0 0 18%;
-  overflow: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 
 .mat-column-pmkid {
   flex: 0 0 20%;
-  overflow: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 
 .mat-column-processed {
@@ -50,8 +54,12 @@
 .delete:hover {
   color: red;
 }
+.mat-header-cell:last-of-type {
+  padding-right: 0;
+}
 
-mat-cell {
+
+.mat-cell {
   align-items: stretch;
 }
 
@@ -59,6 +67,11 @@ span {
   align-self: center;
 }
 
-input {
-  overflow: hidden;
+mat-table {
+  max-height: 80%;
+  margin: 1% 5% 1% 5%;
+  border-radius: 15px;
+  border: 15px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 30px;
+  overflow-x: hidden;
 }

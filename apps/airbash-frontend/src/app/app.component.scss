@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+}
+
+.spacer {
+  height: 0.00001%;
+}
+
+.switch-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8%;
+  border-radius: 10px;
+  border: 10px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  margin: 1% 20% 1% 20%;
+
+  .dark-icon {
+    transform: scale(2);
+    color: yellow;
+  }
+
+  .light-icon {
+    transform: scale(2);
+    color: black;
+  }
+}

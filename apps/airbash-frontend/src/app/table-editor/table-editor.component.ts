@@ -72,18 +72,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
-  getRowValue(value: number | string): number | string {
-    if (
-      value === null ||
-      value === undefined ||
-      (typeof value === 'string' && value.trim() === '')
-    ) {
-      return '<no value>';
-    }
-
-    return value;
-  }
-
   updateValueAndDisableField(
     row: Capture,
     fieldname: string,

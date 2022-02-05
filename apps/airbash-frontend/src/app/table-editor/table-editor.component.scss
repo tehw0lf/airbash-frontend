@@ -6,58 +6,34 @@
 .mat-column-latitude {
   flex: 0 0 10%;
   justify-content: center;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-longitude {
   flex: 0 0 10%;
   justify-content: center;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-bssid {
   flex: 0 0 15%;
   justify-content: center;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-essid {
   flex: 0 0 15%;
   overflow-x: hidden;
   white-space: nowrap;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-psk {
   flex: 0 0 18%;
   overflow-x: hidden;
   white-space: nowrap;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-pmkid {
   flex: 0 0 20%;
   overflow-x: hidden;
   white-space: nowrap;
-
-  .mat-cell {
-    align-items: stretch;
-  }
 }
 
 .mat-column-processed {
@@ -66,12 +42,24 @@
 }
 
 .mat-column-delete {
-  flex: 0 0 4%;
+  flex: 0 0 2%;
   justify-content: center;
+  padding-left: 1.5%;
 }
 
+.delete {
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: red;
+}
 .mat-header-cell:last-of-type {
   padding-right: 0;
+}
+
+.mat-cell {
+  align-items: stretch;
 }
 
 span {

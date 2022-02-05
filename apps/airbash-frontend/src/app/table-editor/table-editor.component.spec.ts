@@ -11,8 +11,8 @@ import { TableEditorComponent } from './table-editor.component';
 
 const mockDataService = {
   captures$: of<Capture[]>(mockCaptures),
-  editCapture: jest.fn(),
-  removeCapture: jest.fn(),
+  editCapture: jest.fn(() => of()),
+  removeCapture: jest.fn(() => of()),
 };
 
 describe('TableEditorComponent', () => {
@@ -35,5 +35,10 @@ describe('TableEditorComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should delete a row', () => {
+    component.deleteRow(0);
+    expect(mockDataService.removeCapture).toHaveBeenCalledWith(0);
   });
 });

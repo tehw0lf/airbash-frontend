@@ -37,13 +37,21 @@ export class TableEditorComponent implements OnInit, OnDestroy {
   }
 
   enableAndShowInputField(clickEvent: Event): void {
-    const clickedSpan = clickEvent.target as HTMLSpanElement;
-    const siblingInput = clickedSpan.previousSibling as HTMLInputElement;
-    if (siblingInput.disabled && siblingInput.hidden) {
-      siblingInput.disabled = false;
-      siblingInput.hidden = false;
+    const span = (clickEvent.target as HTMLSpanElement).lastElementChild
+      ? ((clickEvent.target as HTMLElement).lastElementChild as HTMLSpanElement)
+      : (clickEvent.target as HTMLSpanElement);
 
-      clickedSpan.hidden = true;
+    const input = (clickEvent.target as HTMLElement).firstElementChild
+      ? ((clickEvent.target as HTMLElement)
+          .firstElementChild as HTMLInputElement)
+      : (span.previousElementSibling as HTMLInputElement);
+    if (input !== null) {
+      if (input.disabled && input.hidden) {
+        input.disabled = false;
+        input.hidden = false;
+
+        span.hidden = true;
+      }
     }
   }
 
@@ -59,24 +67,32 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       }, 100);
     }
   }
-
-  delete(rowId: number): void {
+  deleteRow(rowId: number): void {
     this.dataService
       .removeCapture(rowId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe();
   }
 
-  updateValue(row: Capture, fieldname: string, inputChangedEvent: Event): void {
+  updateValueAndDisableField(
+    row: Capture,
+    fieldname: string,
+    leaveEvent: Event
+  ): void {
     const updatedValue: number | string = (
-      inputChangedEvent.target as HTMLInputElement
+      leaveEvent.target as HTMLInputElement
     ).value;
-    const updatedCapture = row;
-    updatedCapture[fieldname] = updatedValue;
 
-    this.dataService
-      .editCapture(updatedCapture)
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe();
+    if (updatedValue !== row[fieldname]) {
+      const updatedCapture = row;
+      updatedCapture[fieldname] = updatedValue;
+
+      this.dataService
+        .editCapture(updatedCapture)
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe();
+    }
+
+    this.disableAndHideInputField(leaveEvent);
   }
 }

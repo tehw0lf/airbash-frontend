@@ -35,7 +35,7 @@ describe('TableEditorComponent', () => {
   });
 
   it('should create', () => {
-    expect(component)..toEqual(true);
+    expect(component).toEqual(true);
   });
 
   describe('row value', () => {

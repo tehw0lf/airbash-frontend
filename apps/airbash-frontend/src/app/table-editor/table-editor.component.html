@@ -8,7 +8,7 @@
 
   <ng-container matColumnDef="latitude">
     <mat-header-cell *matHeaderCellDef>Latitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="latitude-input"
         mat-input
@@ -19,13 +19,13 @@
         disabled
         hidden
       />
-      <span id="latitude-span" (click)="enableAndShowInputField($event)">{{ row.latitude }}</span>
+      <span id="latitude-span">{{ row.latitude }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="longitude">
     <mat-header-cell *matHeaderCellDef>Longitude</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="longitude-input"
         mat-input
@@ -36,13 +36,13 @@
         disabled
         hidden
       />
-      <span id="longitude-span" (click)="enableAndShowInputField($event)">{{ row.longitude }}</span>
+      <span id="longitude-span">{{ row.longitude }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="bssid">
     <mat-header-cell *matHeaderCellDef>BSSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="bssid-input"
         mat-input
@@ -53,13 +53,13 @@
         disabled
         hidden
       />
-      <span id="bssid-span" (click)="enableAndShowInputField($event)">{{ row.bssid }}</span>
+      <span id="bssid-span">{{ row.bssid }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="essid">
     <mat-header-cell *matHeaderCellDef>ESSID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="essid-input"
         mat-input
@@ -69,13 +69,13 @@
         disabled
         hidden
       />
-      <span id="essid-span" (click)="enableAndShowInputField($event)">{{ row.essid }}</span>
+      <span id="essid-span">{{ row.essid }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="psk">
     <mat-header-cell *matHeaderCellDef>PSK</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="psk-input"
         mat-input
@@ -86,13 +86,13 @@
         disabled
         hidden
       />
-      <span id="psk-span" (click)="enableAndShowInputField($event)">{{ row.psk }}</span>
+      <span id="psk-span">{{ row.psk }}</span>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="pmkid">
     <mat-header-cell *matHeaderCellDef>PMKID</mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <mat-cell (click)="enableAndShowInputField($event)" *matCellDef="let row">
       <input
         id="pmkid-input"
         mat-input
@@ -102,7 +102,7 @@
         disabled
         hidden
       />
-      <span id="pmkid-span" (click)="enableAndShowInputField($event)">{{ row.pmkid }}</span>
+      <span id="pmkid-span">{{ row.pmkid }}</span>
     </mat-cell>
   </ng-container>
 
@@ -117,7 +117,9 @@
     <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
     <mat-cell *matCellDef="let row">
       <span>
-        <mat-icon id="delete" class="delete" (click)="deleteRow(row.id)">delete</mat-icon>
+        <mat-icon id="delete" class="delete" (click)="deleteRow(row.id)">
+          delete
+        </mat-icon>
       </span>
     </mat-cell>
   </ng-container>

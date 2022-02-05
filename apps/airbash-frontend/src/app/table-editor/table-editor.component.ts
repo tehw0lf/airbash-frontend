@@ -37,18 +37,21 @@ export class TableEditorComponent implements OnInit, OnDestroy {
   }
 
   enableAndShowInputField(clickEvent: Event): void {
-    const clickedSpan = clickEvent.target as HTMLSpanElement;
-    const siblingInput = clickedSpan.previousSibling as HTMLInputElement;
-    if (siblingInput.disabled && siblingInput.hidden) {
-      siblingInput.disabled = false;
-      siblingInput.hidden = false;
+    const span = (clickEvent.target as HTMLSpanElement).lastElementChild
+      ? ((clickEvent.target as HTMLElement).lastElementChild as HTMLSpanElement)
+      : (clickEvent.target as HTMLSpanElement);
 
-      clickedSpan.hidden = true;
-    } else {
-      siblingInput.disabled = false;
-      siblingInput.hidden = false;
+    const input = (clickEvent.target as HTMLElement).firstElementChild
+      ? ((clickEvent.target as HTMLElement)
+          .firstElementChild as HTMLInputElement)
+      : (span.previousElementSibling as HTMLInputElement);
+    if (input !== null) {
+      if (input.disabled && input.hidden) {
+        input.disabled = false;
+        input.hidden = false;
 
-      clickedSpan.hidden = true;
+        span.hidden = true;
+      }
     }
   }
 
@@ -64,7 +67,6 @@ export class TableEditorComponent implements OnInit, OnDestroy {
       }, 100);
     }
   }
-
   deleteRow(rowId: number): void {
     this.dataService
       .removeCapture(rowId)

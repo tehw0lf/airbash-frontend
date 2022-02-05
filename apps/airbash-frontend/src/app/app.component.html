@@ -1,11 +1,20 @@
 <div
+  class="container"
   [ngClass]="{ 'light-theme': lightTheme, 'dark-theme': !lightTheme }"
-  class="switch-theme"
-  (click)="lightTheme = !lightTheme"
 >
-  <mat-icon class="dark-icon" *ngIf="lightTheme">dark_mode</mat-icon>
-  <mat-icon class="light-icon" *ngIf="!lightTheme">light_mode</mat-icon>
+  <div
+    class="spacer"
+    [ngClass]="{ 'light-theme': lightTheme, 'dark-theme': !lightTheme }"
+  ></div>
+  <div
+    [ngClass]="{ 'light-theme': lightTheme, 'dark-theme': !lightTheme }"
+    class="switch-theme"
+    (click)="lightTheme = !lightTheme"
+  >
+    <mat-icon class="light-icon" *ngIf="lightTheme">light_mode</mat-icon>
+    <mat-icon class="dark-icon" *ngIf="!lightTheme">dark_mode</mat-icon>
+  </div>
+  <airbash-frontend-table-editor
+    [ngClass]="{ 'light-theme': lightTheme, 'dark-theme': !lightTheme }"
+  ></airbash-frontend-table-editor>
 </div>
-<airbash-frontend-table-editor
-  [ngClass]="{ 'light-theme': lightTheme, 'dark-theme': !lightTheme }"
-></airbash-frontend-table-editor>

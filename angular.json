@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "airbash-frontend": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "root": "apps/airbash-frontend",
       "sourceRoot": "apps/airbash-frontend/src",
@@ -9,9 +10,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/airbash-frontend",
             "index": "apps/airbash-frontend/src/index.html",
@@ -91,11 +90,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/airbash-frontend"
-          ],
+          "outputs": ["coverage/apps/airbash-frontend"],
           "options": {
-            "jestConfig": "apps/airbash-frontend/jest.config.js",
+            "jestConfig": "apps/airbash-frontend/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -108,11 +105,11 @@
       "projectType": "application",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/cypress:cypress",
+          "builder": "@ns3/nx-jest-playwright:jest-playwright",
           "options": {
-            "cypressConfig": "apps/airbash-frontend-e2e/cypress.json",
-            "devServerTarget": "airbash-frontend:serve:development",
-            "tsConfig": "apps/airbash-frontend-e2e/tsconfig.json"
+            "devServerTarget": "airbash-frontend:serve",
+            "jestConfig": "apps/airbash-frontend-e2e/jest.config.ts",
+            "passWithNoTests": true
           },
           "configurations": {
             "production": {
@@ -122,20 +119,16 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": [
-              "apps/airbash-frontend-e2e/**/*.{js,ts}"
+              "apps/airbash-frontend-e2e/**/*.{ts,tsx,js,jsx}"
             ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "airbash-frontend"
-      ]
+      "implicitDependencies": ["airbash-frontend"]
     }
   }
 }

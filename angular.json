@@ -100,17 +100,16 @@
       "tags": []
     },
     "airbash-frontend-e2e": {
-      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/airbash-frontend-e2e",
       "sourceRoot": "apps/airbash-frontend-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/cypress:cypress",
+          "builder": "@ns3/nx-jest-playwright:jest-playwright",
           "options": {
-            "cypressConfig": "apps/airbash-frontend-e2e/cypress.json",
-            "devServerTarget": "airbash-frontend:serve:development",
-            "tsConfig": "apps/airbash-frontend-e2e/tsconfig.json"
+            "devServerTarget": "airbash-frontend:serve",
+            "jestConfig": "apps/airbash-frontend-e2e/jest.config.ts",
+            "passWithNoTests": true
           },
           "configurations": {
             "production": {
@@ -122,7 +121,9 @@
           "builder": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["apps/airbash-frontend-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/airbash-frontend-e2e/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         }
       },

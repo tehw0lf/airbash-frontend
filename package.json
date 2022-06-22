@@ -8,7 +8,8 @@
     "start": "json-server --watch mock-api.json & nx serve && json-server --stop",
     "build": "nx build",
     "lint": "nx lint",
-    "test": "nx test --skip-nx-cache --detect-open-handles"
+    "test": "nx test --skip-nx-cache --detect-open-handles",
+    "e2e": "nx run airbash-frontend-e2e:e2e"
   },
   "private": true,
   "dependencies": {

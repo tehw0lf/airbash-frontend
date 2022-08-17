@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "airbash-frontend": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "root": "apps/airbash-frontend",
       "sourceRoot": "apps/airbash-frontend/src",
@@ -9,9 +10,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/airbash-frontend",
             "index": "apps/airbash-frontend/src/index.html",
@@ -91,11 +90,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/airbash-frontend"
-          ],
+          "outputs": ["coverage/apps/airbash-frontend"],
           "options": {
-            "jestConfig": "apps/airbash-frontend/jest.config.js",
+            "jestConfig": "apps/airbash-frontend/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -103,6 +100,7 @@
       "tags": []
     },
     "airbash-frontend-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/airbash-frontend-e2e",
       "sourceRoot": "apps/airbash-frontend-e2e/src",
       "projectType": "application",
@@ -122,20 +120,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/airbash-frontend-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/airbash-frontend-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "airbash-frontend"
-      ]
+      "implicitDependencies": ["airbash-frontend"]
     }
   }
 }
